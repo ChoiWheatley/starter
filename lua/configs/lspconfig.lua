@@ -16,11 +16,17 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- ruff setup
-lspconfig.ruff.setup {
-  init_options = {
-    settings = {
-      lineLength = 100
-    }
+-- python-lsp-server setup
+lspconfig.pylsp.setup {
+  settings = {
+    black = { enabled = true },
+    autopep8 = { enabled = false },
+    yapf = { enabled = false },
+    pylint = { enabled = true, executable = "pylint" },
+    pyflakes = { enabled = false },
+    pycodestyle = { enabled = false },
+    pylsp_mypy = { enabled = true },
+    jedi_completion = { fuzzy = true },
+    pyls_isort = { enabled = true },
   }
 }
