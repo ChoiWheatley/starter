@@ -18,12 +18,12 @@ local M = {
   },
 
   base46 = {
-    theme = "radium",
+    theme = "dark_horizon",
     hl_add = {},
     hl_override = {},
     integrations = {},
     transparency = false,
-    theme_toggle = { "radium", "one_light" },
+    theme_toggle = { "dark_horizon", "one_light" },
   },
 
   ui = {
@@ -60,7 +60,7 @@ local M = {
   },
 
   nvdash = {
-    load_on_startup = false,
+    load_on_startup = true,
 
     header = {
       "                            ",
