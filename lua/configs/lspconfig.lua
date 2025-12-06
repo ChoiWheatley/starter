@@ -1,15 +1,13 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
-
 -- EXAMPLE
 local servers = { "html", "cssls", "ts_ls", "prismals" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  vim.lsp.config[lsp] = {
     on_attach = nvlsp.on_attach,
     on_init = nvlsp.on_init,
     capabilities = nvlsp.capabilities,
@@ -17,7 +15,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- python-lsp-server setup
-lspconfig.pylsp.setup {
+vim.lsp.config["pylsp"] = {
   settings = {
     black = { enabled = true },
     autopep8 = { enabled = false },
