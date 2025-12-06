@@ -61,4 +61,7 @@ return {
     "wakatime/vim-wakatime",
     lazy = false,
   },
+  {
+    "smartpde/telescope-recent-files",
+  },
 }

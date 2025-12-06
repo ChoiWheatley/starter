@@ -4,6 +4,19 @@
 
 ---@type ChadrcConfig
 local M = {
+
+  general = {
+    n = {
+      ["<leader>fp"] = {
+        function()
+          local path = vim.fn.expand("%:p")
+          vim.notify("File path: " .. path, vim.log.levels.INFO, { title = "Current File" })
+        end,
+        "Show current file path",
+      },
+    },
+  },
+
   base46 = {
     theme = "radium",
     hl_add = {},
@@ -28,9 +41,13 @@ local M = {
       theme = "default", -- default/vscode/vscode_colored/minimal
       -- default/round/block/arrow separators work only for default statusline theme
       -- round and block will work for minimal theme only
-      separator_style = "default",
+      separator_style = "block",
       order = nil,
-      modules = nil,
+      modules = {
+          file_info = function ()
+            return vim.fn.expand("%:p")
+          end,
+        }
     },
 
     -- lazyload it when there are 1+ buffers

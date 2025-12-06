@@ -26,6 +26,14 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
+require("telescope").setup {
+  extenstions = {
+    recent_files = {
+      start_files = true,
+    }
+  }
+}
+
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
