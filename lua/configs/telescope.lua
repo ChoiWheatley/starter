@@ -1,4 +1,3 @@
-require("telescope").load_extension("recent_files")
 require("telescope").setup {
   defaults = {
     file_ignore_patterns = {
@@ -6,7 +5,14 @@ require("telescope").setup {
       "%.git/",
       "%.cache",
       "%.class",
-      "%.pdf", "%.png", "%.jpg", "%.jpeg"
-    }
-  }
+      "%.pdf", "%.png", "%.jpg", "%.jpeg",
+    },
+  },
+  extensions = {
+    recent_files = {
+      stat_files = true,
+    },
+  },
 }
+
+require("telescope").load_extension "recent_files"

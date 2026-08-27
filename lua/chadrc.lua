@@ -18,12 +18,12 @@ local M = {
   },
 
   base46 = {
-    theme = "dark_horizon",
+    theme = "one_light",
     hl_add = {},
     hl_override = {},
     integrations = {},
     transparency = false,
-    theme_toggle = { "dark_horizon", "one_light" },
+    theme_toggle = { "chadracula", "one_light" },
   },
 
   ui = {
